@@ -5,14 +5,14 @@ import FormdataTable from './FormdataTable';
 import SignupForm from './SignupForm';
 
 class Routes extends Component {
-    render() { 
-        return (  
-            <Switch>
-                <Route path={'/'} exact component={SignupForm} ></Route>
-                <Route path={'/viewlist'} exact component={FormdataTable}></Route>
-            </Switch>
-        ); 
-    }
+   render() {
+       return ( 
+           <Switch>
+               <Route path={'/'} exact component={SignupForm } ></Route>
+               <Route path={'/viewlist'} exact component={FormdataTable}></Route>
+           </Switch>
+       );
+   }
 }
- 
+
 export default Routes;
