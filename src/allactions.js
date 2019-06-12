@@ -6,3 +6,11 @@ export function addNewEmp(payload){
     }
     return action;
 }
+
+export function delEmp(index){
+    const action = {
+        type: "DEL_EMP",
+        index
+    }
+    return action;
+}

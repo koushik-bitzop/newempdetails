@@ -118,4 +118,3 @@ function mapDispatchToProps(dispatch){
     return bindActionCreators({addNewEmp},dispatch)
 }
 export default connect (null, mapDispatchToProps)(SignupForm)
-// export default SignupForm;

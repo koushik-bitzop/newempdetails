@@ -1,10 +1,16 @@
 import React,{Component} from 'react';
 import {connect } from 'react-redux';
-
-// import empdata from '../data/employeedata.json';
+import {bindActionCreators} from 'redux';
+import {delEmp} from '../allactions';
 
 class FormdataTable extends Component {
    state = {  }
+    handleDelete(index){
+        this.props.delEmp(index);
+    }
+    handleEdit(index){
+        console.log("Edit:",index);
+    }
    render() {
        console.log(this.props.empdata);
        return (
@@ -61,5 +67,7 @@ function mapStateToProps(state){
         empdata : state
     };
 }
-export default connect(mapStateToProps,null)(FormdataTable);
-// export default FormdataTable;
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({delEmp},dispatch)
+}
+export default connect(mapStateToProps,mapDispatchToProps)(FormdataTable);
