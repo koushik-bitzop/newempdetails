@@ -2,7 +2,37 @@ import React,{Component} from 'react';
 import {Form, FormGroup, FormControl, FormLabel, Button} from 'react-bootstrap';
 
 class SignupForm extends Component {
-    state = {  }
+    constructor(props) {
+    super(props);
+    this.state = {
+        firstname: '',
+        lastname: '',
+        email: '',
+        mobile: '',
+        city: ''
+    };
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleSubmit = this.handleSubmit.bind(this);
+    }
+ 
+handleSubmit(){
+    let formdata = {
+        firstname: this.state.firstname,
+        lastname: this.state.lastname,
+        email: this.state.email,
+        mobile: this.state.mobile,
+        city: this.state.city
+    };
+    console.log("submitted",formdata);
+    this.setState({
+        firstname: '',
+        lastname: '',
+        email: '',
+        mobile: '',
+        city: ''
+    });
+}
     render() { 
         return ( 
             <div className="col-md-4 offset-md-4">
@@ -15,6 +45,10 @@ class SignupForm extends Component {
                             type="text"
                             name="firstname"
                             placeholder="Firstname"
+                            onChange={e => {
+                                this.setState({[e.target.name]:e.target.value});
+                            }}
+                            value = {this.state.firstname}
                         />
                     </FormGroup>
                 
@@ -24,6 +58,10 @@ class SignupForm extends Component {
                             type="text"
                             name="lastname"
                             placeholder="Lastname"
+                            onChange={e => {
+                                this.setState({[e.target.name]:e.target.value});
+                            }}
+                            value = {this.state.lastname}
                         />
                     </FormGroup>
 
@@ -33,6 +71,10 @@ class SignupForm extends Component {
                             type="text"
                             name="email"
                             placeholder="Email"
+                            onChange={e => {
+                                this.setState({[e.target.name]:e.target.value});
+                            }}
+                            value = {this.state.email}
                         />
                     </FormGroup>
 
@@ -42,6 +84,10 @@ class SignupForm extends Component {
                             type="text"
                             name="mobile"
                             placeholder="Mobile"
+                            onChange={e => {
+                                this.setState({[e.target.name]:e.target.value});
+                            }}
+                            value = {this.state.mobile}
                         />
                     </FormGroup>
 
@@ -51,6 +97,10 @@ class SignupForm extends Component {
                             type="text"
                             name="city"
                             placeholder="City/Village"
+                            onChange={e => {
+                                this.setState({[e.target.name]:e.target.value});
+                            }}
+                            value = {this.state.city}
                     />
                     </FormGroup>
                     <Button onClick={this.handleSubmit}>Submit</Button>

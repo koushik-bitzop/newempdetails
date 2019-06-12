@@ -11,9 +11,9 @@ class Header extends Component{
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item active">
-                            <NavLink to="/" className="nav-link" href="#">Add new <span className="sr-only">(current)</span></NavLink>
+                            <NavLink to="/" className="nav-link" href="#">Add new </NavLink>
                         </li>
-
+ 
                         <li className="nav-item">
                             <NavLink to="/viewlist" className="nav-link" href="#">View list</NavLink>
                         </li>

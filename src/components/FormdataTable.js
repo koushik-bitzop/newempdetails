@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import empdata from '../data/employeedata.json';
 
 class FormdataTable extends Component {
-    state = {  }
+    state = {  } 
     render() { 
         console.log(empdata);
         return (
